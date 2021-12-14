@@ -1,4 +1,5 @@
-﻿using System;
+﻿//1. Написать метод, возвращающий минимальное из трёх чисел.
+using System;
 
 namespace Home_Work_2._1
 {
@@ -31,6 +32,8 @@ namespace Home_Work_2._1
 
         static void Main(string[] args)
         {
+            Console.WriteLine("1. Написать метод, возвращающий минимальное из трёх чисел.");
+            Console.Read();
             Ask();
         }
     }
