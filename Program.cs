@@ -1,32 +1,77 @@
-﻿//3.С клавиатуры вводятся числа, пока не будет введен 0. Подсчитать сумму всех нечетных положительных чисел.
+﻿//4. Реализовать метод проверки логина и пароля.
+//На вход метода подается логин и пароль.
+//На выходе истина, если прошел авторизацию, и ложь, если не прошел
+//(Логин: root, Password: GeekBrains).
+//Используя метод проверки логина и пароля, написать программу: пользователь вводит логин и пароль,
+//программа пропускает его дальше или не пропускает.
+//С помощью цикла do while ограничить ввод пароля тремя попытками.
 using System;
 
-namespace Home_Work2._2
+namespace Home_Work2._3
 {
     class Program
     {
-        private static void myNumber()
+         static bool myLogIn()
         {
-            
-            
-            int inputNum = 1;
-            int result = 0;
-            while (inputNum != 0) 
-            {
-                Console.WriteLine("Введите число. Чтобы завершить введите 0.");
-                inputNum = int.Parse(Console.ReadLine());
-                
-                if (inputNum % 2 != 0 && inputNum > 0) result+= inputNum;
-            }
-            
-         
-            Console.Write($"Сумма всех нечётных чисел введённых вами состовляет {result}");
-            Console.ReadLine();
+            string loginInput = "", passwordInput = "";
+            int i = 0;
+            string login = "root", password = "GeekBrains";
+           
+                Console.WriteLine($"Количество попыток {3 - i} !");
+                do
+                {
+                    Console.Write("Введите логин:");
+                    loginInput = Console.ReadLine();
+                    Console.Write("Введите пароль:");
+                    passwordInput = Console.ReadLine();
+                    i++;
+
+                    if (loginInput == login && passwordInput == password)break; 
+
+                    Console.WriteLine($"Данные не верны, количество оставшихся попыток {3 - i} !");
+                    
+                    continue;
+                }
+                while (i < 3);
+
+                if (loginInput == login && passwordInput == password)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Доступ разрешён!");
+                        Console.ReadLine();
+                        return true;
+                    }
+                else 
+                    {
+                        Console. ForegroundColor = ConsoleColor. Red;
+                        Console.WriteLine("В доступе отказано!");
+                        Console.ReadLine();
+                        return false;
+                    }
+
+           
+
+
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("3. С клавиатуры вводятся числа, пока не будет введен 0. Подсчитать сумму всех нечетных положительных чисел.\n\n");
-            myNumber();
+            Console.WriteLine(@" 
+Реализовать метод проверки логина и пароля.
+На вход метода подается логин и пароль. 
+На выходе истина, если прошел авторизацию, и ложь, если не прошел 
+(Логин: root, Password: GeekBrains). 
+Используя метод проверки логина и пароля, 
+написать программу: пользователь вводит логин и пароль,
+программа пропускает его дальше или не пропускает. 
+С помощью цикла do while ограничить ввод пароля тремя попытками.");
+            Console.WriteLine("\n\n");
+
+            
+
+            myLogIn();
+            
+
+
 
 
         }
