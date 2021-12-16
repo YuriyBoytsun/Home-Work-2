@@ -11,7 +11,7 @@ namespace Home_Work_2._1
             int i = 0;
             for (i = 0; i < nums.Length; i++)
             {
-                Console.WriteLine("add a number");
+                Console.WriteLine("Введите число");
                 nums[i] = Convert.ToInt32(Console.ReadLine());
 
             }
@@ -26,14 +26,14 @@ namespace Home_Work_2._1
                 if (result > nums[i]) result = nums[i];
                 else continue;
             }
-            Console.WriteLine($"resuit is {result}");
+            Console.WriteLine($"Минимальное число: {result}");
             Console.ReadLine();
         }
 
         static void Main(string[] args)
         {
-            Console.WriteLine("1. Написать метод, возвращающий минимальное из трёх чисел.");
-            Console.Read();
+            Console.WriteLine("1. Написать метод, возвращающий минимальное из трёх чисел.\n\n");
+            
             Ask();
         }
     }
